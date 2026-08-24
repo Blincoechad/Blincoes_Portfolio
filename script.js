@@ -194,7 +194,7 @@ async function openVideoModal(videoSrc) {
   if (!videoModal || !videoModalPlayer || !videoSrc) return;
   videoModalPlayer.src = videoSrc;
   videoModalPlayer.load();
-  videoModalPlayer.muted = false;
+  videoModalPlayer.muted = true;
   videoModal.classList.add("is-open");
   videoModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");

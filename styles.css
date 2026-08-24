@@ -1007,6 +1007,10 @@ section {
     box-shadow 0.2s,
     transform 0.2s;
 }
+button.project-link {
+  appearance: none;
+  cursor: pointer;
+}
 .project-link:hover {
   transform: scale(1.06);
 }
