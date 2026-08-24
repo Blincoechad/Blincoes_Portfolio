@@ -525,19 +525,32 @@
           </div>
 
           <!-- Vanguard Intelligence -->
-          <div
-            class="project-card reveal"
-            data-video-modal
-            data-video-src="media/clips/VanguardAiDemo.mp4"
-          >
-            <div class="project-img project-video-wrap">
-              <video
-                muted
-                loop
-                playsinline
-                preload="auto"
-                src="media/clips/VanguardAiDemo.mp4"
-              ></video>
+          <div class="project-card reveal">
+            <div class="project-img ba-strip">
+              <div class="ba-pane">
+                <img
+                  src="media/Login.png"
+                  alt="Vanguard Intelligence mock sign-in screen"
+                  onerror="
+                    this.parentElement.innerHTML =
+                      '<div class=\'project-img-placeholder\'>[media/Login.png]</div>'
+                  "
+                />
+              </div>
+              <div class="ba-pane ba-pane-contain">
+                <img
+                  src="media/TopHalf.png"
+                  alt="Vanguard Intelligence dashboard with signals chart"
+                  onerror="
+                    this.parentElement.innerHTML =
+                      '<div class=\'project-img-placeholder\'>[media/TopHalf.png]</div>'
+                  "
+                />
+              </div>
+              <div hidden>
+                <img src="media/BottomHalf.png" alt="Vanguard Intelligence dashboard source reliability and API health panels" />
+                <img src="media/SignUp.png" alt="Vanguard Intelligence mock sign-up screen" />
+              </div>
               <div class="project-overlay"></div>
             </div>
             <div class="project-body">
@@ -565,7 +578,12 @@
                 <div class="tag">Team Project</div>
               </div>
               <div class="project-links">
-                <button type="button" class="project-link project-link-live">
+                <button
+                  type="button"
+                  class="project-link project-link-live"
+                  data-video-trigger
+                  data-video-src="media/clips/VanguardAiDemo.mp4"
+                >
                   View Demo
                 </button>
                 <a

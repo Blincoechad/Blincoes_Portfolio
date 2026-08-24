@@ -1090,6 +1090,12 @@ button.project-link {
   object-fit: cover;
   display: block;
 }
+.ba-pane-contain {
+  background: var(--bg3);
+}
+.ba-pane-contain img {
+  object-fit: contain;
+}
 
 /* ─── PROCESS ───────────────────────────────────── */
 #process {

@@ -240,6 +240,13 @@ videoCards.forEach((card) => {
   });
 });
 
+document.querySelectorAll("[data-video-trigger]").forEach((trigger) => {
+  trigger.addEventListener("click", (event) => {
+    event.stopPropagation();
+    openVideoModal(trigger.dataset.videoSrc);
+  });
+});
+
 externalCards.forEach((card) => {
   const externalUrl = card.dataset.externalUrl;
 
