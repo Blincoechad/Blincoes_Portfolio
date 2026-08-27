@@ -142,6 +142,7 @@ nav {
 .nav-logo img {
   height: 120px;
   width: auto;
+  transform-origin: left center;
 }
 .nav-logo-text {
   font-family: "Rajdhani", sans-serif;
@@ -1876,7 +1877,10 @@ footer {
     display: none;
   }
   .nav-logo img {
-    height: 116px;
+    /* Grow the logo visually without enlarging the nav row: layout height
+       stays small, transform scales the rendered image so it overflows. */
+    height: 84px;
+    transform: scale(1.75);
   }
   .nav-actions {
     justify-self: end;
@@ -1891,7 +1895,7 @@ footer {
     order: 1;
   }
   #hero {
-    padding-top: 9.5rem;
+    padding-top: 8.5rem;
   }
   .nav-links {
     display: none;
@@ -2053,10 +2057,11 @@ footer {
     padding: 0.65rem 0.9rem;
   }
   .nav-logo img {
-    height: 98px;
+    height: 68px;
+    transform: scale(1.7);
   }
   #hero {
-    padding-top: 8.25rem;
+    padding-top: 7.5rem;
   }
   .nav-actions {
     width: 100%;
