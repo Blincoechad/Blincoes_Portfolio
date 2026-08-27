@@ -1876,7 +1876,7 @@ footer {
     display: none;
   }
   .nav-logo img {
-    height: 94px;
+    height: 116px;
   }
   .nav-actions {
     justify-self: end;
@@ -1891,7 +1891,7 @@ footer {
     order: 1;
   }
   #hero {
-    padding-top: 8rem;
+    padding-top: 9.5rem;
   }
   .nav-links {
     display: none;
@@ -2053,7 +2053,10 @@ footer {
     padding: 0.65rem 0.9rem;
   }
   .nav-logo img {
-    height: 78px;
+    height: 98px;
+  }
+  #hero {
+    padding-top: 8.25rem;
   }
   .nav-actions {
     width: 100%;
