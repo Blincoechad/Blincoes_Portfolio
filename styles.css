@@ -1877,10 +1877,10 @@ footer {
     display: none;
   }
   .nav-logo img {
-    /* Grow the logo visually without enlarging the nav row: layout height
-       stays small, transform scales the rendered image so it overflows. */
-    height: 84px;
-    transform: scale(1.75);
+    /* Original layout height keeps the nav row unchanged; scale() enlarges
+       the rendered logo just enough to fill the bar without overflowing it. */
+    height: 94px;
+    transform: scale(1.22);
   }
   .nav-actions {
     justify-self: end;
@@ -1895,7 +1895,7 @@ footer {
     order: 1;
   }
   #hero {
-    padding-top: 8.5rem;
+    padding-top: 8rem;
   }
   .nav-links {
     display: none;
@@ -2057,11 +2057,8 @@ footer {
     padding: 0.65rem 0.9rem;
   }
   .nav-logo img {
-    height: 68px;
-    transform: scale(1.7);
-  }
-  #hero {
-    padding-top: 7.5rem;
+    height: 78px;
+    transform: scale(1.22);
   }
   .nav-actions {
     width: 100%;
