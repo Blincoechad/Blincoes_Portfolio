@@ -76,17 +76,37 @@ reveals.forEach((r) => observer.observe(r));
 
 // ─── Back to top button
 const backToTop = document.getElementById("backToTop");
+const backToTopText = document.querySelector(".back-to-top-text");
+const pageFooter = document.querySelector("footer");
 
 function updateBackToTop() {
   if (!backToTop) return;
-  if (window.scrollY > 320) {
-    backToTop.classList.add("visible");
-  } else {
-    backToTop.classList.remove("visible");
+
+  backToTop.classList.toggle("visible", window.scrollY > 320);
+
+  // Dock the button (and its label) just above the footer so it never
+  // overlaps footer content once you reach the bottom of the page.
+  if (pageFooter) {
+    const gap = 12;
+    const anchor = backToTopText || backToTop;
+    const currentLift =
+      parseFloat(
+        document.documentElement.style.getPropertyValue("--btt-lift"),
+      ) || 0;
+    const restingBottom = anchor.getBoundingClientRect().bottom + currentLift;
+    const lift = Math.max(
+      0,
+      restingBottom - (pageFooter.getBoundingClientRect().top - gap),
+    );
+    if (Math.abs(lift - currentLift) > 0.5) {
+      document.documentElement.style.setProperty("--btt-lift", `${lift}px`);
+    }
   }
 }
 
-window.addEventListener("scroll", updateBackToTop);
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+window.addEventListener("resize", updateBackToTop);
+window.addEventListener("load", updateBackToTop);
 updateBackToTop();
 
 backToTop?.addEventListener("click", () => {
