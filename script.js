@@ -1,24 +1,32 @@
 // ─── Cursor
+const isTouchDevice = window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+const cursor = document.getElementById("cursor");
 const dot = document.getElementById("cursorDot");
 const ring = document.getElementById("cursorRing");
-let mx = 0,
-  my = 0,
-  rx = 0,
-  ry = 0;
-document.addEventListener("mousemove", (e) => {
-  mx = e.clientX;
-  my = e.clientY;
-});
-function animCursor() {
-  dot.style.left = mx + "px";
-  dot.style.top = my + "px";
-  rx += (mx - rx) * 0.12;
-  ry += (my - ry) * 0.12;
-  ring.style.left = rx + "px";
-  ring.style.top = ry + "px";
-  requestAnimationFrame(animCursor);
+
+if (isTouchDevice) {
+  // Touch devices have no mouse pointer — drop the custom cursor entirely.
+  cursor?.remove();
+} else {
+  let mx = 0,
+    my = 0,
+    rx = 0,
+    ry = 0;
+  document.addEventListener("mousemove", (e) => {
+    mx = e.clientX;
+    my = e.clientY;
+  });
+  function animCursor() {
+    dot.style.left = mx + "px";
+    dot.style.top = my + "px";
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + "px";
+    ring.style.top = ry + "px";
+    requestAnimationFrame(animCursor);
+  }
+  animCursor();
 }
-animCursor();
 
 // ─── Mobile navigation
 const nav = document.querySelector("nav");

@@ -79,6 +79,15 @@ body:has(a:hover, button:hover) .cursor-ring {
   height: 52px;
   opacity: 0.8;
 }
+/* Remove the custom cursor on touch devices and at mobile viewport widths */
+@media (hover: none) and (pointer: coarse), (max-width: 900px) {
+  body {
+    cursor: auto;
+  }
+  .cursor {
+    display: none !important;
+  }
+}
 
 /* ─── NOISE OVERLAY ─────────────────────────────── */
 body::before {
